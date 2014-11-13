@@ -14,8 +14,11 @@ Getting Started
 
 ::
 
+
     pip3 install pythrust [--user]
 
+At install, pythrust's ``setup.py`` automatically downloads a binary
+distribution of Thrust for the current platform.
 
 ::
 
