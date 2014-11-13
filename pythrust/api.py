@@ -137,19 +137,3 @@ class API:
     def window(self, args):
         return Window(self, args, loop=self.loop)
 
-
-def download_binary(base_url, version, platform):
-  SOURCE_ROOT = os.path.dirname(os.path.abspath(inspect.getfile(
-    inspect.currentframe())))
-  THRUST_PATH = os.path.join(SOURCE_ROOT, '..', 'vendor', 'thrust')
-  THRUST_VERSION_PATH = os.path.join(THRUST_PATH, '.version')
-  THRUST_RELEASE_FILENAME = 'thrust-' + version + '-' + platform + '.zip'
-  THRUST_RELEASE_URL = base_url + version + '/' + THRUST_RELEASE_FILENAME;
-
-  print('**************** DOWNLOAD THRUST ', THRUST_RELEASE_URL)
-
-
-
-
-
-

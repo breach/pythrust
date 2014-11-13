@@ -10,7 +10,7 @@ README = open(os.path.join(here, 'README.rst')).read()
 NEWS = open(os.path.join(here, 'NEWS.txt')).read()
 
 
-THRUST_VERSION = 'v0.7.5'
+THRUST_VERSION = 'v0.7.5-pre0'
 
 version = '0.7.5'
 install_requires = [
@@ -49,7 +49,7 @@ THRUST_BASE_URL = 'https://github.com/breach/thrust/releases/download/'
 
 def _post_install():  
     import pythrust
-    pythrust.download_binary(THRUST_BASE_URL, THRUST_VERSION, THRUST_PLATFORM)
+    pythrust.boostrap(THRUST_BASE_URL, THRUST_VERSION, THRUST_PLATFORM)
 
 class my_install(_install):  
     def run(self):
