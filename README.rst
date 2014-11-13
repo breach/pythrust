@@ -9,7 +9,9 @@ Getting Started
 ===============
 
 ::
+
     pip3 install pythrust [--user]
+
 
 ::
 
