@@ -3,6 +3,7 @@ pythrust
 
 .. _Thrust: https://github.com/breach/thrust
 .. _Python3: https://www.python.org/
+.. _`Thrust Documentation`: https://github.com/breach/thrust/tree/master/docs
 
 Official Python bindings library for Thrust_
 
@@ -31,3 +32,14 @@ Getting Started
   
     loop.run_forever()
 
+Status
+======
+
+Support is only limited to the ``window`` object for now. Contributions are
+welcomed! 
+
+Documentation
+=============
+
+Pending specific pythrust documentation, full API reference is available 
+in the `Thrust Documentation`
