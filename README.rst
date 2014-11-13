@@ -42,4 +42,4 @@ Documentation
 =============
 
 Pending specific pythrust documentation, full API reference is available 
-in the `Thrust Documentation`
+in the `Thrust Documentation`_
