@@ -8,9 +8,19 @@ import inspect
 import sys
 import shutil
 import stat
+import subprocess
+
+def execute(argv):
+  try:
+    output = subprocess.check_output(argv)
+    return output
+  except subprocess.CalledProcessError as e:
+    print(e.output)
+    raise e
+
 
 def download_and_extract(destination, url):
-    with tempfile.TemporaryFile() as t:
+    with tempfile.NamedTemporaryFile() as t:
         with contextlib.closing(urllib.request.urlopen(url)) as u:
             while True:
                 chunk = u.read(1024*1024)
@@ -21,12 +31,16 @@ def download_and_extract(destination, url):
                 t.write(chunk)
         sys.stderr.write('\nExtracting to {0}\n'.format(destination))
         sys.stderr.flush()
-        with zipfile.ZipFile(t) as z:
-            z.extractall(destination)
-        if sys.platform == 'linux':
-            thrust_shell_path = os.path.join(destination, 'thrust_shell');
-            st = os.stat(thrust_shell_path)
-            os.chmod(thrust_shell_path, st.st_mode | stat.S_IEXEC)
+        if sys.platform == 'darwin':
+            # Use unzip command on Mac to keep symbol links in zip file work.
+            execute(['unzip', str(t.name), '-d', destination])
+        else:
+            with zipfile.ZipFile(t) as z:
+                z.extractall(destination)
+            if sys.platform == 'linux':
+                thrust_shell_path = os.path.join(destination, 'thrust_shell');
+                st = os.stat(thrust_shell_path)
+                os.chmod(thrust_shell_path, st.st_mode | stat.S_IEXEC)
 
 def rm_rf(path):
     try:
@@ -56,6 +70,7 @@ def boostrap(dest, base_url, version, platform, force=False):
             return
 
     rm_rf(THRUST_PATH)
+    os.makedirs(THRUST_PATH)
 
     sys.stderr.write('Downloading {0}...\n'.format(THRUST_RELEASE_URL))
     sys.stderr.flush()
