@@ -9,6 +9,9 @@ Getting Started
 ===============
 
 ::
+    pip3 install pythrust [--user]
+
+::
 
     import pythrust
     import asyncio
@@ -22,3 +25,4 @@ Getting Started
     asyncio.async(window.show())
   
     loop.run_forever()
+
