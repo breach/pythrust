@@ -14,6 +14,7 @@ install_requires = [
     # List your project dependencies here.
     # For more details, see:
     # http://packages.python.org/distribute/setuptools.html#declaring-dependencies
+    'pyee'
 ]
 
 setup(name='pythrust',
@@ -32,8 +33,4 @@ setup(name='pythrust',
     include_package_data=True,
     zip_safe=False,
     install_requires=install_requires,
-    entry_points={
-        'console_scripts':
-            ['pythrust=pythrust:main']
-    }
 )

@@ -8,7 +8,7 @@ import signal
 
 from asyncio.subprocess import PIPE
 
-from window import Window
+from .window import Window
 
 class API:
     def __init__(self, loop=None):

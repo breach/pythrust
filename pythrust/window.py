@@ -1,5 +1,6 @@
 import asyncio
-from base import Base
+
+from .base import Base
 
 class Window(Base):
     def __init__(self, api, args, loop=None):
