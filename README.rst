@@ -1,7 +1,7 @@
 pythrust
 ========
 
-Official Python bindings library for [Thrust](https://github.com/breach/thrust)
+Official Python bindings library for Thrust (https://github.com/breach/thrust)
 
 Getting Started
 ===============
@@ -9,6 +9,7 @@ Getting Started
 ::
 
     import pythrust
+    import asyncio
 
     loop = asyncio.get_event_loop()
     api = pythrust.API(loop)
