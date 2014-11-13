@@ -3,8 +3,10 @@ pythrust
 
 Official Python bindings library for [Thrust](https://github.com/breach/thrust)
 
-### Getting Started
-```
+Getting Started
+===============
+
+``
 import pythrust
 
 loop = asyncio.get_event_loop()
@@ -16,4 +18,4 @@ window = api.window({})
 asyncio.async(window.show())
 
 loop.run_forever()
-```
+``
