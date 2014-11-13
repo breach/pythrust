@@ -36,7 +36,9 @@ Status
 ======
 
 Support is only limited to the ``window`` object for now. Contributions are
-welcomed! 
+welcomed
+
+Support tested on Linux and MacOSX. Still a few bugs on Windows.
 
 Documentation
 =============
