@@ -8,6 +8,8 @@ Official Python bindings library for Thrust_
 Getting Started
 ===============
 
+``pythrust`` requires Python 3 as it relies on the ``asyncio`` module.
+
 ::
 
     pip3 install pythrust [--user]
