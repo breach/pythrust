@@ -2,13 +2,14 @@ pythrust
 ========
 
 .. _Thrust: https://github.com/breach/thrust
+.. _Python3: https://www.python.org/
 
 Official Python bindings library for Thrust_
 
 Getting Started
 ===============
 
-``pythrust`` requires Python 3 as it relies on the ``asyncio`` module.
+``pythrust`` requires Python3_ as it relies on the ``asyncio`` module.
 
 ::
 
