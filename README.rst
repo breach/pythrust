@@ -1,7 +1,9 @@
 pythrust
 ========
 
-Official Python bindings library for Thrust (https://github.com/breach/thrust)
+.. _Thrust: https://github.com/breach/thrust
+
+Official Python bindings library for Thrust_
 
 Getting Started
 ===============
