@@ -10,7 +10,7 @@ README = open(os.path.join(here, 'README.rst')).read()
 NEWS = open(os.path.join(here, 'NEWS.txt')).read()
 
 
-THRUST_VERSION = 'v0.7.5-pre0'
+THRUST_VERSION = 'v0.7.5'
 
 version = '0.7.5'
 install_requires = [
@@ -47,20 +47,24 @@ THRUST_PLATFORM = {
 THRUST_BASE_URL = 'https://github.com/breach/thrust/releases/download/'
 
 
-def _post_install():  
+def _post_install(dest):  
     import pythrust
-    pythrust.boostrap(THRUST_BASE_URL, THRUST_VERSION, THRUST_PLATFORM)
+    pythrust.boostrap(dest, 
+            THRUST_BASE_URL, THRUST_VERSION, THRUST_PLATFORM)
 
 class my_install(_install):  
     def run(self):
         _install.run(self)
-        self.execute(_post_install, [],  msg="running post_install script")
+        self.execute(_post_install, 
+                [os.path.join(self.install_platlib, self.config_vars['dist_name'])],  
+                msg="running post_install script")
 
 class my_develop(_develop):  
     def run(self):
-        self.execute(noop, (self.install_lib,), msg="Running develop task")
         _develop.run(self)
-        self.execute(_post_install, [], msg="running post_develop script")
+        self.execute(_post_install, 
+                [os.path.join(self.install_platlib, self.config_vars['dist_name'])],  
+                msg="running post_develop script")
 
 
 setup(name='pythrust',

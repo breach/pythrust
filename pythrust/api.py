@@ -25,7 +25,7 @@ class API:
         }[sys.platform]
         self.SOURCE_ROOT = os.path.dirname(os.path.abspath(inspect.getfile(
             inspect.currentframe())))
-        self.THRUST_PATH = os.path.join(self.SOURCE_ROOT, '..', 'vendor', 
+        self.THRUST_PATH = os.path.join(self.SOURCE_ROOT, 'vendor', 
             'thrust')
         self.THRUST_EXEC = {
             'linux': os.path.join(self.THRUST_PATH, 'thrust_shell'),
