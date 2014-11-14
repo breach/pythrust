@@ -53,7 +53,7 @@ class Window(Base):
       return r
 
     @asyncio.coroutine
-    def set_kiosk(self, fullscreen):
+    def set_kiosk(self, kiosk):
       r = yield from super().call('set_kiosk', { 
           'kiosk': kiosk 
       })
