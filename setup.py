@@ -88,7 +88,9 @@ def download_and_extract(destination, url):
             if sys.platform == 'linux':
                 thrust_shell_path = os.path.join(destination, 'thrust_shell');
                 st = os.stat(thrust_shell_path)
-                os.chmod(thrust_shell_path, st.st_mode | stat.S_IEXEC)
+                os.chmod(thrust_shell_path, 
+                         st.st_mode | 
+                         stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH)
 
 def rm_rf(path):
     try:
